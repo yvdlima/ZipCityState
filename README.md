@@ -1,6 +1,6 @@
 Zip-City-State Plugin
 =====================
-Provides utilities to populate the City and State from the provided 5 digit zip code. Due to licensing concerns no postal
+Provides utilities to populate the City and State from a given 5 digit zip code. Due to licensing concerns no postal
 code date will be packaged with this plugin. The original intent of this plugin was to allow users to easily implement
 their own zip code database and lookup.  The design is such that you can easily utilize an external service if you would
 prefer.
