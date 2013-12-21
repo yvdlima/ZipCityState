@@ -1,19 +1,14 @@
 package zipcitystate
 
-import grails.test.mixin.TestFor
 import grails.test.mixin.Mock
-import grails.util.Holders
+import grails.test.mixin.TestFor
 import grails.test.mixin.TestMixin
 import grails.test.mixin.support.GrailsUnitTestMixin
+import grails.util.Holders
 
-/**
- * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
- */
 @TestFor(ZipCodeController)
 @Mock([ZipCode,ZipCodeService])
-@TestMixin(GrailsUnitTestMixin)
 class ZipCodeControllerTests {
-
 
     void testLookup() {
         Holders.grailsApplication.mainContext.registerMockBean("zipCodeService", new ZipCodeService())

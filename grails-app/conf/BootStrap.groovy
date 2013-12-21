@@ -3,12 +3,6 @@ import zipcitystate.ZipCode
 class BootStrap {
 
     def init = { servletContext ->
-        createSomeZipCodes()
-    }
-    def destroy = {
-    }
-
-    def createSomeZipCodes = {
         def nescacZips = [
                 ['01267','Williamstown','MA'],
                 ['01002','Amherst','MA'],
