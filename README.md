@@ -14,6 +14,10 @@ Installation
 Add the following to the ```build.gradle``` file of your Grails project:
 
 ```java
+repositories {
+    maven { url "https://dl.bintray.com/goodstartgenetics/grails3-plugins/" }
+}
+
 dependencies {
     compile "org.grails.plugins:zip-city-state:2.0"
 }
