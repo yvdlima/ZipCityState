@@ -73,7 +73,8 @@ task wrapper(type: Wrapper) {
 
 bintray {
     pkg {
-        userOrg = 'Good Start Genetics' //publish to an organization
+        userOrg = 'goodstartgenetics' //publish to an organization
+        repo = 'grails3-plugins'
         name = "$project.name"
         issueTrackerUrl = "https://github.com/alexkramer/ZipCityState/issues"
         vcsUrl = "https://github.com/alexkramer/ZipCityState"
@@ -85,7 +86,7 @@ bintray {
 }
 
 grailsPublish {
-    userOrg = 'Good Start Genetics'
+    userOrg = 'goodstartgenetics'
     githubSlug = 'ZipCityState'
     license {
         name = 'Apache-2.0'
