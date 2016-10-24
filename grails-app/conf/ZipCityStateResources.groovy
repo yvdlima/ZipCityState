@@ -1,10 +1,12 @@
-import org.codehaus.groovy.grails.plugins.PluginManagerHolder
+import grails.util.Holders
 
-boolean hasJQueryPlugin = PluginManagerHolder.pluginManager.hasGrailsPlugin('jquery')
+boolean hasJQueryPlugin = Holders.pluginManager.hasGrailsPlugin('jquery')
 
 modules = {
     'zipcitystate' {
-        if(hasJQueryPlugin) dependsOn 'jquery'
+        if(hasJQueryPlugin) {
+            dependsOn 'jquery'
+        }
         resource url: [dir: 'js', file: 'jquery.zipcitystate.js', plugin: 'zipcitystate']
     }
 }
