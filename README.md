@@ -46,7 +46,7 @@ Maintain your own database
     ```java
     zipcitystate:
         cityStateLookupService:
-            beanName: myZipCodeService
+            beanName: zipCodeService
     ```
 4. Create your gsp
    a. Place the tag to include the necessary js on your page (will use the asset pipeline plugin if installed in your application)
