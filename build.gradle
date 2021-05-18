@@ -14,7 +14,7 @@ buildscript {
     }
 }
 
-version "2.0.1"
+version "2.0.2"
 group "org.grails.plugins"
 
 apply plugin:"eclipse"
@@ -74,4 +74,21 @@ task wrapper(type: Wrapper) {
 
 assets {
     packagePlugin = true
+}
+
+grailsPublish {
+    user = ''
+    key = ''
+    userOrg = 'grails'
+    repo = 'plugins'
+    websiteUrl = 'https://github.com/yvdlima/ZipCityState'
+    githubSlug = 'ZipCityState'
+    license {
+        name = 'Apache-2.0'
+    }
+    title = 'Zip City State Plugin'
+    issueTrackerUrl = 'https://github.com/yvdlima/ZipCityState'
+    vcsUrl = 'https://github.com/yvdlima/ZipCityState'
+    desc = '''Provides utilities to populate the US City and State from the provided 5 digit Zip code.'''
+    developers = [ alexkramer: 'Alex Kramer', gpottepalem: 'Giri Pottepalem', ylima: 'Yuri Lima']
 }
