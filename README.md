@@ -1,3 +1,7 @@
+
+[![Release](https://jitpack.io/v/User/Repo.svg)]
+(https://jitpack.io/#yvdlima/ZipCityState)
+
 Zip-City-State Plugin
 =====================
 Provides utilities to populate the City and State from a given 5 digit zip code. Due to licensing concerns no postal
