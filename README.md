@@ -1,41 +1,51 @@
+# :biohazard: :biohazard: Zip-City-State Plugin :biohazard: :biohazard:
 
-[![Release](https://jitpack.io/v/User/Repo.svg)]
-(https://jitpack.io/#yvdlima/ZipCityState)
+[![](https://jitpack.io/v/yvdlima/ZipCityState.svg)](https://jitpack.io/#yvdlima/ZipCityState)
 
-Zip-City-State Plugin
-=====================
+**This is a port from the original plugin for Grails 4 because I needed for legacy projects, but really, you shouldn't use this, it has 0 tests, does some really bad stuff with the javascript injection and is not useful enough to justify it's existence. STAY AWAY!**
+
+Use version 2.0.2 for Grails 3
+
+## About
+
 Provides utilities to populate the City and State from a given 5 digit zip code. Due to licensing concerns no postal
 code data will be packaged with this plugin. The original intent of this plugin was to allow users to easily implement
 their own zip code database and lookup.  The design is such that you can easily utilize an external service if you would
 prefer.
 
-Dependencies
-============
-This plugin requires jQuery (no strict requirement on version)
+## Dependencies
 
-Installation
-============
-Add the following to the ```build.gradle``` file of your Grails project:
+This plugin requires jQuery (no strict requirement on version) **It will inject a older version of jQuery every time you use the tag lib, it really sucks!**
+
+## Installation
+
+Add the following to the `build.gradle` file of your Grails project:
 
 ```java
 repositories {
-    maven { url "https://dl.bintray.com/goodstartgenetics/grails3-plugins/" }
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    compile "org.grails.plugins:zip-city-state:2.0"
+    compile compile 'com.github.yvdlima:ZipCityState:3.0.0'
 }
 ```
 
-Implementation Instructions
-===========================
-Maintain your own database
---------------------------
-1. Create a domain class with the zip code info (city,state,zip).
-    A simple example can be found in the project source [ZipCode](/grails-app/domain/zipcitystate/ZipCode.groovy).
+## Demo Project
 
-2. Provide a service which implements the [CityStateLookup](/src/groovy/zipcitystate/CityStateLookup.groovy) interface.<a name="step2"></a>
-    An example using the above domain class is provided in the project source [ZipCodeService](/grails-app/services/zipcitystate/ZipCodeService.groovy)
+You can see how the plugin works and develop on it here: <https://github.com/yvdlima/ZipCityStateDemo/>
+
+# Implementation Instructions
+
+Maintain your own database
+
+1. Create a domain class with the zip code info (city,state,zip).
+   
+    A simple example can be found in the project [ZipCityStateDemo](https://github.com/yvdlima/ZipCityStateDemo/blob/main/grails-app/domain/zipcitystatedemo/ZipCode.groovy)
+
+2. Provide a service which implements the [CityStateLookup](src/main/groovy/grails/plugin/zipcitystate/CityStateLookup.groovy) interface.
+   
+    An example using the above domain class is provided in the project source [ZipCodeService](https://github.com/yvdlima/ZipCityStateDemo/blob/main/grails-app/services/zipcitystatedemo/ZipCodeService.groovy)
     and copied here:
 
     ```java
@@ -60,7 +70,7 @@ Maintain your own database
    a. Place the tag to include the necessary js on your page (will use the asset pipeline plugin if installed in your application)
 
     ```html
-    <zipCode:resources/>
+    <zipcitystate:resources/>
     ```
 b. Bind the javascript function and event to your zip code field. An example usage is provided below:
 
@@ -84,11 +94,3 @@ b. Bind the javascript function and event to your zip code field. An example usa
     //= require zip-city-state
     ```
 6. Test it out!
-
-Use an external service
-------------------------
-Start at [step 2](#step2) above
-
-Sample Application
-==================
-Good news! This plugin is also a fully functional sample application.  Simply download the source and fire it up.
